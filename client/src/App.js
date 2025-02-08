@@ -165,7 +165,7 @@ function ProjectsSection() {
       summary: 'Created a web application using React and Firebase to visualize real-time sensor data from an IoT hub.',
       description: 'Developed backend services in Python to process and store air quality metrics efficiently. Check out the images and video demonstration below.',
       images: [
-        'a/laQu916'
+        'a/Dxd2w5Z'
       ],
       videos: ['https://drive.google.com/file/d/1iecfJ6h1DnoU3S5SXnFIfbWlMht49sXQ/view?usp=sharing'],
       liveLink: 'https://cmpe188-group7.web.app/'
