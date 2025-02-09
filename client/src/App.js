@@ -39,6 +39,7 @@ function Header({ darkMode, setDarkMode }) {
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#achievements">Achievements &amp; Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button
@@ -65,7 +66,7 @@ function Profile() {
         </p>
         <div className="social-links">
           <a href="https://github.com/AuthenticPeach" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/travis-peach-4b5978113/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -77,7 +78,7 @@ function MainContent() {
   return (
     <main>
       <Section id="education" title="Education">
-        <p><strong>BS Computer Engineering</strong></p>
+        <p><strong>BS - Computer Engineering</strong></p>
         <p>San Jose State University | College of Engineering</p>
         <p><em>Graduated: December 2024</em></p>
         <p>Organizations: Software and Computer Engineering Society</p>
@@ -111,11 +112,27 @@ function MainContent() {
       
       <Section id="achievements" title="Achievements &amp; Interests">
         <ul>
-          <li>Published and managed over 20 mods on the Steam Workshop, with a top mod reaching 2.3M subscribers.</li>
-          <li>Enthusiastic about open-source projects and actively contribute to community-driven initiatives.</li>
-          <li>Personal interest in AI applications and game development.</li>
+          <li>
+            Published and managed over 20 mods on the Steam Workshop, with a top mod reaching 2.3M subscribers.
+            Check out my top mod{' '}
+            <a
+              href="https://steamcommunity.com/sharedfiles/filedetails/?id=2335368829"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>.
+          </li>
+          <li>
+            Enthusiastic about open-source projects and actively contribute to community-driven initiatives.
+          </li>
+          <li>
+            Personal interest in AI applications and game development.
+          </li>
         </ul>
       </Section>
+
+      <ContactSection />      
     </main>
   );
 }
@@ -273,6 +290,22 @@ function ProjectModal({ project, onClose }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <p>
+        You can reach me via email at{' '}
+        <a href="mailto:travispeachohyeah@gmail.com">travispeachohyeah@gmail.com</a>
+      </p>
+      <p>
+        Or text me at{' '}
+        <a href="tel:+4087074227">+1 (408) 707-4227</a>
+      </p>
+    </section>
   );
 }
 
