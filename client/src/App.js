@@ -15,7 +15,10 @@ function App() {
     <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <Helmet>
         <title>Travis Peach Portfolio</title>
-        <meta name="description" content="Software Engineer Portfolio of Travis Peach showcasing education, experience, and projects." />
+        <meta
+          name="description"
+          content="Software Engineer Portfolio of Travis Peach showcasing education, experience, and projects."
+        />
       </Helmet>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Profile />
@@ -27,7 +30,6 @@ function App() {
   );
 }
 
-// Header with navigation links and dark mode toggle
 function Header({ darkMode, setDarkMode }) {
   return (
     <header>
@@ -52,7 +54,6 @@ function Header({ darkMode, setDarkMode }) {
   );
 }
 
-// Profile section with profile picture, bio, and social links
 function Profile() {
   return (
     <section className="profile">
@@ -73,7 +74,6 @@ function Profile() {
   );
 }
 
-// MainContent including other sections plus ProjectsSection
 function MainContent() {
   return (
     <main>
@@ -137,7 +137,6 @@ function MainContent() {
   );
 }
 
-// A reusable Section component for consistency
 function Section({ id, title, children }) {
   return (
     <section id={id} data-aos="fade-up">
@@ -147,7 +146,6 @@ function Section({ id, title, children }) {
   );
 }
 
-// New component to display a list of project cards with "More Info" functionality
 function ProjectsSection() {
   const projects = [
     {
@@ -174,7 +172,6 @@ function ProjectsSection() {
         'a/laQu916'
       ],
       videos: ['https://drive.google.com/file/d/1ifp-h-qO-OkRfOZX3tDzrsSrncNISEBT/view?usp=sharing']
-      // No live link provided for this project.
     },
     {
       id: 'aqsensinghub',
@@ -204,7 +201,6 @@ function ProjectsSection() {
   );
 }
 
-// A simple card for each project summary
 function ProjectCard({ project, onMoreInfo }) {
   return (
     <div className="project-card" data-aos="fade-up">
@@ -214,14 +210,13 @@ function ProjectCard({ project, onMoreInfo }) {
     </div>
   );
 }
-// A helper function to convert Google Drive URLs.
+
 function convertGoogleDriveLink(url, type) {
   const fileIdRegex = /\/d\/([^/?]+)/;
   const match = url.match(fileIdRegex);
   if (match && match[1]) {
     const fileId = match[1];
     if (type === 'image') {
-      // Try using docs.google.com for images
       return `https://docs.google.com/uc?export=view&id=${fileId}`;
     } else if (type === 'video') {
       return `https://drive.google.com/file/d/${fileId}/preview`;
@@ -231,14 +226,16 @@ function convertGoogleDriveLink(url, type) {
 }
 
 function ImgurEmbed({ dataId, title }) {
-  // This component renders a blockquote that Imgur’s embed script will process.
-  // For best results, add the following script to your public/index.html:
-  // <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
   const embedHTML = `
     <blockquote class="imgur-embed-pub" lang="en" data-id="${dataId}">
       <a href="//imgur.com/${dataId}">${title}</a>
     </blockquote>
   `;
+  useEffect(() => {
+    if (window.imgurEmbed && typeof window.imgurEmbed.process === 'function') {
+      window.imgurEmbed.process();
+    }
+  }, []);
   return (
     <div
       className="imgur-embed-wrapper"
@@ -247,8 +244,6 @@ function ImgurEmbed({ dataId, title }) {
   );
 }
 
-
-// A modal to display detailed project info, images, and videos
 function ProjectModal({ project, onClose }) {
   return (
     <div className="modal-overlay">
@@ -256,7 +251,6 @@ function ProjectModal({ project, onClose }) {
         <button className="close-button" onClick={onClose}>X</button>
         <h2>{project.title}</h2>
         <p>{project.description}</p>
-        {/* Render the "Visit Live Site" button if a liveLink exists */}
         {project.liveLink && (
           <div className="live-link-container">
             <a
@@ -303,13 +297,12 @@ function ContactSection() {
       </p>
       <p>
         Or text me at{' '}
-        <a href="tel:+4087074227">+1 (408) 707-4227</a>
+        <a href="tel:+14087074227">+1 (408) 707-4227</a>
       </p>
     </section>
   );
 }
 
-// Footer component
 function Footer() {
   return (
     <footer>
