@@ -149,6 +149,27 @@ function Section({ id, title, children }) {
 function ProjectsSection() {
   const projects = [
     {
+      id: 'cafeInventory',
+      title: 'Cathedral Café Inventory App (Android & iOS)',
+      summary: 'Built cross-platform mobile apps in Kotlin (Android) and SwiftUI (iOS) using Firebase for backend, enabling real-time inventory tracking, expiration management, and PDF export.',
+      description: `
+        Delivered a comprehensive inventory management solution for the Cathedral Café, featuring:
+        • Item expiration alerts and threshold notifications  
+        • Storage categorization (Stock vs. Running Low)  
+        • A Recipes tab with collapsible instructions  
+        • PDF export of general stock matching the printed checklist layout  
+        • Firebase Authentication & Firestore synchronization  
+        • Native UI built with Jetpack Compose and SwiftUI  
+      `,
+      images: [
+        // e.g. "a/YourImgurID1", "a/YourImgurID2"
+      ],
+      videos: [
+        // e.g. 'https://yourvideo.url/preview'
+      ],
+      liveLink: '' // add your live or repo link here if available
+    },
+    {
       id: 'quack',
       title: 'Quack Messaging App (Software Engineering II)',
       summary: 'Developed a customizable messaging app using Node.js, MongoDB, Python, JavaScript, HTML, and CSS.',
